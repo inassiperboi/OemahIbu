@@ -1,0 +1,117 @@
+CRITICAL - 2024-05-11 04:27:33 --> ErrorException: Declaration of App\Controllers\Api\FoodDetailController::show() should be compatible with CodeIgniter\RESTful\ResourceController::show($id = NULL)
+in APPPATH\Controllers\api\FoodDetailController.php on line 26.
+ 1 APPPATH\Controllers\api\FoodDetailController.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Declaration of App\\Controllers\\Api\\FoodDetailController::show() should be compatible with CodeIgniter\\RESTful\\ResourceController::show($id = NULL)', 'C:\\xampp\\htdocs\\tokodia-backend\\app\\Controllers\\api\\FoodDetailController.php', 26, [...])
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(309): include_once('C:\\xampp\\htdocs\\tokodia-backend\\app\\Controllers\\api\\FoodDetailController.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(288): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\tokodia-backend\\app\\Controllers\\Api\\FoodDetailController.php')
+ 4 SYSTEMPATH\Autoloader\Autoloader.php(266): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Api\\FoodDetailController')
+ 5 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Api\\FoodDetailController')
+ 6 [internal function]: spl_autoload_call('App\\Controllers\\Api\\FoodDetailController')
+ 7 SYSTEMPATH\CodeIgniter.php(899): class_exists('\\App\\Controllers\\Api\\FoodDetailController', true)
+ 8 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\tokodia-backend\\public\\index.php')
+ERROR - 2024-05-11 04:32:53 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\tokodia-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\tokodia-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'tokodia_db', 3306, '', 0)
+#1 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\tokodia-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `food_de...', Array, false)
+#4 C:\xampp\htdocs\tokodia-backend\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\tokodia-backend\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\tokodia-backend\app\Models\FoodDetailModel.php(33): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\tokodia-backend\app\Controllers\api\FoodDetailController.php(97): App\Models\FoodDetailModel->getByFoodId(2)
+#8 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(941): App\Controllers\Api\FoodDetailController->getByFoodId()
+#9 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\FoodDetailController))
+#10 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\tokodia-backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\tokodia-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\tokodia-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\tokodia-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `food_de...', Array, false)
+#3 C:\xampp\htdocs\tokodia-backend\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\tokodia-backend\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\tokodia-backend\app\Models\FoodDetailModel.php(33): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\tokodia-backend\app\Controllers\api\FoodDetailController.php(97): App\Models\FoodDetailModel->getByFoodId(2)
+#7 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(941): App\Controllers\Api\FoodDetailController->getByFoodId()
+#8 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\FoodDetailController))
+#9 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokodia-backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokodia-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-05-11 04:32:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `food_detail`.*, `food`.`jenis`, `food`.`nama`, `food`.`kesulitan`, `food`.`images`
+FROM `food_detail`
+LEFT JOIN `food` ON `food`.`food_id` = `food_detail`.`food_id`
+WHERE `food_detail`.`food_id` = :food_detail.food_id:', [...], false)
+ 3 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\FoodDetailModel.php(33): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\api\FoodDetailController.php(97): App\Models\FoodDetailModel->getByFoodId(2)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Api\FoodDetailController->getByFoodId()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\FoodDetailController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\tokodia-backend\\public\\index.php')
+ERROR - 2024-05-11 04:33:10 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\tokodia-backend\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 C:\xampp\htdocs\tokodia-backend\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'root', '', 'tokodia_db', 3306, '', 0)
+#1 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\tokodia-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `food_de...', Array, false)
+#4 C:\xampp\htdocs\tokodia-backend\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\tokodia-backend\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\tokodia-backend\app\Models\FoodDetailModel.php(33): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\tokodia-backend\app\Controllers\api\FoodDetailController.php(97): App\Models\FoodDetailModel->getByFoodId(2)
+#8 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(941): App\Controllers\Api\FoodDetailController->getByFoodId()
+#9 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\FoodDetailController))
+#10 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\tokodia-backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\tokodia-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it.
+ in C:\xampp\htdocs\tokodia-backend\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\tokodia-backend\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\tokodia-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `food_de...', Array, false)
+#3 C:\xampp\htdocs\tokodia-backend\system\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\tokodia-backend\system\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\tokodia-backend\app\Models\FoodDetailModel.php(33): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\tokodia-backend\app\Controllers\api\FoodDetailController.php(97): App\Models\FoodDetailModel->getByFoodId(2)
+#7 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(941): App\Controllers\Api\FoodDetailController->getByFoodId()
+#8 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\FoodDetailController))
+#9 C:\xampp\htdocs\tokodia-backend\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokodia-backend\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokodia-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2024-05-11 04:33:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `food_detail`.*, `food`.`jenis`, `food`.`nama`, `food`.`kesulitan`, `food`.`images`
+FROM `food_detail`
+LEFT JOIN `food` ON `food`.`food_id` = `food_detail`.`food_id`
+WHERE `food_detail`.`food_id` = :food_detail.food_id:', [...], false)
+ 3 SYSTEMPATH\Model.php(242): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(638): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\FoodDetailModel.php(33): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\api\FoodDetailController.php(97): App\Models\FoodDetailModel->getByFoodId(2)
+ 7 SYSTEMPATH\CodeIgniter.php(941): App\Controllers\Api\FoodDetailController->getByFoodId()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Api\FoodDetailController))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\tokodia-backend\\public\\index.php')
